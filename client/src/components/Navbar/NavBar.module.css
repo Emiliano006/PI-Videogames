@@ -44,3 +44,6 @@
     vertical-align: top;
     cursor: pointer;
 }
+.nav h1 a{
+    color: rgba(243, 243, 243, 0.932);
+}
