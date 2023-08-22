@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Card from '../Card/Card';
 import style from './Cards.module.css'
-import { byAll } from '../../redux/actions';
+
 
 
 const Cards = ({ games, page, setPage }) => {
@@ -12,7 +12,7 @@ const Cards = ({ games, page, setPage }) => {
   const [origin, setOrigin] = useState('');
   const genres = useSelector((state) => state.genres);
   const copyAllGames = useSelector((state) => state.copyAllGames);
-  const dispatch = useDispatch();
+  
 
 
 
@@ -28,32 +28,21 @@ const Cards = ({ games, page, setPage }) => {
   const buttons = [];
 
   const handlePage = (event) => {
-    setPage(event.target.value * 15);
+    setPage(event.target.value * 16);
   };
 
   const handlePagePrev = () => {
-    setPage(page - 15);
+    setPage(page - 16);
   };
 
   const handlePageNext = () => {
-    setPage(page + 15);
+    setPage(page + 16);
   };
 
   const handleFilterByGenre = (event) => {
     setGenre(event.target.value);
     setPage(0);
   };
-
-  const handleFilterByOrg = (event) => {
-    setOrigin(event.target.value);
-    setPage(0);
-  };
-
-  const handleGameAll = () => {
-    dispatch(byAll())
-    setOrigin('all')
- 
-  }
 
   const handleOrderAlf = (event) => {
     setOrderAlf(event.target.value);
@@ -92,7 +81,7 @@ const Cards = ({ games, page, setPage }) => {
     
   }
 
-  for (let i = 1; i <= Math.ceil(allGames.length / 15); i++) {
+  for (let i = 1; i <= Math.ceil(allGames.length / 16); i++) {
     buttons.push(i);
   }
 
@@ -152,16 +141,21 @@ const Cards = ({ games, page, setPage }) => {
       <div className={style.pagination}>
           {page > 0 && <button onClick={handlePagePrev}>&lArr;</button>}
           {buttons.map((button, i) => (
-            <button value={i} onClick={handlePage} key={i}>
+            <button 
+            value={i} 
+            onClick={handlePage} 
+            key={i}
+            className={page / 16 === i ? style.activeButton : ''}
+            >
               {button}
             </button>
           ))}
-          {page < allGames.length - 15 && <button onClick={handlePageNext}>&rArr;</button>}
+          {page < allGames.length - 16 && <button onClick={handlePageNext}>&rArr;</button>}
         </div>
 
       <div className={style.cards}>
         {allGames.length ? (
-          allGames.slice(page, page + 15).map((game, i) => <Card game={game} key={i} />)
+          allGames.slice(page, page + 16).map((game, i) => <Card game={game} key={i} />)
         ) : (
           <p>{message}</p>
         )}
@@ -169,11 +163,15 @@ const Cards = ({ games, page, setPage }) => {
       <div className={style.pagination}>
           {page > 0 && <button onClick={handlePagePrev}>&lArr;</button>}
           {buttons.map((button, i) => (
-            <button value={i} onClick={handlePage} key={i}>
+            <button 
+            value={i} 
+            onClick={handlePage} 
+            key={i}
+            className={page / 16 === i ? style.activeButton : ''}>
               {button}
             </button>
           ))}
-          {page < allGames.length - 15 && <button onClick={handlePageNext}>&rArr;</button>}
+          {page < allGames.length - 16 && <button onClick={handlePageNext}>&rArr;</button>}
         </div>
      
     </div>
