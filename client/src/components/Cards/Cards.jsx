@@ -120,16 +120,31 @@ const Cards = ({ games, page, setPage }) => {
           ))}
         </div>
         <div className={style.filter}>
-          <button onClick={handleOrderAlf} value='A-Z'>
+          <button 
+          onClick={handleOrderAlf} 
+          value='A-Z'
+          className={orderAlf === 'A-Z' ? style.activeButton : ''}>
             &uArr;&dArr; A-Z
           </button>
-          <button onClick={handleOrderAlf} value='Z-A'>
+          <button 
+          onClick={handleOrderAlf} 
+          value='Z-A'
+          className={orderAlf === 'Z-A' ? style.activeButton : ''}
+          >
             &uArr;&dArr; Z-A
           </button>
-          <button onClick={handleOrderRtg} value='Descending'>
+          <button 
+          onClick={handleOrderRtg} 
+          value='Descending'
+          className={orderRtg === 'Descending' ? style.activeButton : ''}
+          >
             &uArr; Rating
           </button>
-          <button onClick={handleOrderRtg} value='Ascending'>
+          <button 
+          onClick={handleOrderRtg} 
+          value='Ascending'
+          className={orderRtg === 'Ascending' ? style.activeButton : ''}
+          >
             &dArr; Rating
           </button>
           
