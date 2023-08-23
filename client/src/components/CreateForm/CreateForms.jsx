@@ -5,7 +5,8 @@ import { url } from "../../redux/actions";
 import { getAllGames } from "../../redux/actions";
 import validations from "./Validation.js";
 import style from './Forms.module.css';
-import Fondo from './Fondo.jpeg';
+
+
 
 const CreateForm = () => {
   // Estado para almacenar los datos del formulario
@@ -98,8 +99,6 @@ const CreateForm = () => {
   return (
     <div className={style.master}>
       <section className={style.seccion}>
-        {/* <div className={style.imageContainer}> */}
-        {/* <img src={Fondo} alt="Imagen de fondo" /> */}
           <div className={style.inputs}>
             <label htmlFor="name">Name: </label>
             <input
@@ -185,7 +184,7 @@ const CreateForm = () => {
                   key={genre.id}
                   style={{
                     backgroundColor: gameData.genres.includes(genre.id.toString())
-                      ? "blue"
+                      ? "#00fbff"
                       : "white",
                   }}
                 >
@@ -205,8 +204,8 @@ const CreateForm = () => {
           >
             Submit
           </button>
-        
       </section>
+        
     </div>
   );
 };
