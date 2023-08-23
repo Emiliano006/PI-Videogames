@@ -14,7 +14,6 @@ const validations = (gameData) => {
   }
 
   if (
-    gameData.image !== "" &&
     !/^https?:\/\/\S+$/.test(gameData.image)
   ) {
     errors.image = "This field must be a valid URL";
