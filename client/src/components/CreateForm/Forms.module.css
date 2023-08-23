@@ -1,76 +1,60 @@
 .master {
-    background: linear-gradient(to right, #000000 60%, #0082ad 200%);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .imageContainer {
-    position: relative;
-  }
-  
-  .imageContainer img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .inputs {
-    margin-top: -80px;
-    margin-bottom: 90px;
-    
-  }
-  
-  label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 1px;
-    color: white;
-  
-  }
-  
-  
-  
-  .inputs input {
-    width: 40%;
-    padding: 5px;
-    border: 2px solid black;
-    border-radius: 4px;
-  }
-  
-  
-  
-  .genres Button {
-    margin: 2px;
-    padding: 5px;
-   
-    border-radius: 4px;
-    color: black;
-    cursor: pointer;
-  }
-  
-  .selected {
-    background-color: blue;
-    color: white;
-  }
-  
-  .boton {
-    padding: 10px 30px;
-    border: none;
-    border-radius: 4px;
-    background-color: #4caf50;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .boton:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
-  .master .genres{
-    margin: 15px;
-  }
+  background: linear-gradient(to right, #000000 60%, #0082ad 200%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.inputs {
+  margin-top: -80px;
+  margin-bottom: 90px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 1px;
+  color: white;
+}
+
+.inputs input {
+  width: 40%;
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 4px;
+}
+
+.genres Button {
+  margin: 2px;
+  padding: 5px;
+  border-radius: 4px;
+  color: black;
+  cursor: pointer;
+}
+
+.selected {
+  background-color: #00fbff;
+  color: white;
+}
+
+.boton {
+  padding: 10px 30px;
+  border: none;
+  border-radius: 4px;
+  background-color: #306432;
+  color: white;
+  cursor: pointer;
+}
+
+.boton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.master .genres{
+  margin: 15px;
+}
