@@ -13,7 +13,7 @@ import { useState } from "react";
 const App = () => {
 const location = useLocation();
   const [page, setPage] = useState(0);
-
+  
   return (
     <div className="App">
       {location.pathname !== '/' && <Navbar setPage={setPage} />}

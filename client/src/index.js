@@ -13,9 +13,7 @@ const cors = require('cors'); // Importa el paquete cors
 const app = express();
 
 // Configura CORS con opciones específicas
-app.use(cors({
-  origin: 'https://game-world-theta.vercel.app' // Aquí puedes cambiar el origen permitido
-}));
+app.use(cors());
 
 ReactDOM.render(
   <Provider store={store}>
