@@ -20,7 +20,9 @@ const location = useLocation();
   const app = express();
   
   // Configura CORS con opciones específicas
-  app.use(cors());
+  app.use(cors({
+    origin: 'https://game-world-theta.vercel.app' // Aquí puedes cambiar el origen permitido
+  }));
 
   return (
     <div className="App">
