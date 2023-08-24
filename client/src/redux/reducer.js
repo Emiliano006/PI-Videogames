@@ -1,4 +1,4 @@
-import { GET_ALLGAMES, GET_GAMESBYNAME, GET_GENRES, GET_BYALL } from "./actions";
+import { GET_ALLGAMES, GET_GAMESBYNAME, GET_GENRES } from "./actions";
 
 const initialState = {
   allGames: [],
@@ -25,12 +25,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         genres: action.payload,
       };
-    case GET_BYALL:
-      return {
-        ...state,
-        allGames: action.payload,
-        copyAllGames: action.payload,
-      };
+  
     default:
       return state;
   }

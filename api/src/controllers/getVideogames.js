@@ -6,6 +6,8 @@ const {Videogame , Genre} = require('../db');
 const getVideogames = async (req, res) => {
     try {
         const promises = [];
+
+        // Realiza solicitudes a la API y almacena las promesas
         for (let i = 1; i < 6; i++){
             let apiGet = axios(`https://api.rawg.io/api/games?key=${API_KEY}&page=${i}`);
             promises.push(apiGet);
@@ -27,6 +29,7 @@ const getVideogames = async (req, res) => {
             }
         })).flat()
         
+        // Consulta información de videojuegos y géneros desde la base de datos
         const dbVideogames = await Videogame.findAll({
             attributes:['id', 'name' , 'image' , 'rating', 'platforms'],
             include: [{

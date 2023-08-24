@@ -2,9 +2,11 @@ const { Videogame } = require('../db');
 
 const postVideogame = async (req, res) => {
   try {
+    // Crea un nuevo videojuego en la base de datos
     const postGame = await Videogame.create(req.body);
-    console.log(req.body);
+    // Asigna los géneros al nuevo videojuego
     await postGame.setGenres(req.body.genres);
+    // Busca en la base de datos los videojuegos con el nombre proporcionado
     const dbGames = await Videogame.findAll({
       where: { name: req.body.name },
     });

@@ -8,6 +8,7 @@ const SearchBar = ({ onSearch }) => {
 
   const handleChange = (event) => {
     const value = event.target.value;
+    // Verifica si el valor no contiene números
     if (!/\d/.test(value)){
         setName(value);
         onSearch(value);

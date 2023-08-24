@@ -14,14 +14,14 @@ const validations = (gameData) => {
   }
 
   if (
-    !/^https?:\/\/\S+$/.test(gameData.image)
+    !/^https?:\/\/\S+$/.test(gameData.image) // Verifica si el campo de imagen no cumple con el patrón de URL
   ) {
     errors.image = "This field must be a valid URL";
   }
 
   if (!gameData.released.length) {
     errors.released = "This field can not be blank";
-  }
+  } 
 
   if (!gameData.rating.length) {
     errors.rating = "This field can not be blank";

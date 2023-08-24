@@ -1,5 +1,4 @@
 const { Router } = require('express')
-
 const getGenres = require('../controllers/getGenres.js')
 
 const router = Router();  

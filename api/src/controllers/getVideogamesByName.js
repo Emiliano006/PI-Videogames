@@ -11,6 +11,7 @@ const getVideogameByName = async (req, res , next) =>{
     if(!name) return next();
 
     try {
+        // Consulta la bd para obtener videojuegos con un nombre similar
         const gameByNameDb = await Videogame.findAll({
              where:{
                  name:{
@@ -26,7 +27,7 @@ const getVideogameByName = async (req, res , next) =>{
                 }
             }]
         })
-        // console.log(gameByNameDb);
+        // Consulta la API para obtener videojuegos con el nombre proporcionado
         const gameByNameApi = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&search=${name}`);
         const response = [...gameByNameDb, ...gameByNameApi.data.results.map(game =>{
             return{
@@ -39,7 +40,7 @@ const getVideogameByName = async (req, res , next) =>{
                     }
                 })
             }
-        })].slice(0 , 15)
+        })].slice(0, 15)// Limita la respuesta a 15 elementos
         res.status(200).json(response)
     } catch (error) {
         res.status(404).send(error.message)
