@@ -7,14 +7,6 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 
-const express = require('express');
-const cors = require('cors'); // Importa el paquete cors
-
-const app = express();
-
-// Configura CORS con opciones específicas
-app.use(cors());
-
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>

@@ -13,7 +13,15 @@ import { useState } from "react";
 const App = () => {
 const location = useLocation();
   const [page, setPage] = useState(0);
+
+  const express = require('express');
+  const cors = require('cors'); // Importa el paquete cors
   
+  const app = express();
+  
+  // Configura CORS con opciones específicas
+  app.use(cors());
+
   return (
     <div className="App">
       {location.pathname !== '/' && <Navbar setPage={setPage} />}
